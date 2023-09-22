@@ -46,7 +46,10 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Schema created**
+- **Create users**
+- **Create posts**
+- **Comment on posts**
+- **Like posts**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
