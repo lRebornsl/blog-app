@@ -27,9 +27,9 @@ RSpec.describe Post, type: :model do
   describe '#recent_comments' do
     it 'returns the 5 most recent comments for the post' do
       post = subject
-      comment1 = Comment.create(user: user, post: post, text: 'Comment 1')
-      comment2 = Comment.create(user: user, post: post, text: 'Comment 2')
-      comment3 = Comment.create(user: user, post: post, text: 'Comment 3')
+      comment1 = Comment.create(user:, post:, text: 'Comment 1')
+      comment2 = Comment.create(user:, post:, text: 'Comment 2')
+      comment3 = Comment.create(user:, post:, text: 'Comment 3')
       expect(post.recent_comments).to eq([comment3, comment2, comment1])
     end
 
@@ -37,7 +37,7 @@ RSpec.describe Post, type: :model do
       expect(subject.recent_comments).to be_empty
     end
   end
-  
+
   describe '#update_post_counter' do
     it 'updates the post counter for the author' do
       post = subject

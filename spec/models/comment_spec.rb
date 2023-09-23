@@ -4,7 +4,7 @@ RSpec.describe Comment, type: :model do
   let(:user) { User.create(name: 'Andrea', posts_counter: 0) }
   let(:post) { Post.create(title: 'Test') }
 
-  subject { described_class.new(comments_counter: 0, user: user, post: post) }
+  subject { described_class.new(comments_counter: 0, user:, post:) }
 
   it 'is valid with valid attributes' do
     expect(subject).to be_valid
@@ -24,7 +24,7 @@ RSpec.describe Comment, type: :model do
     it 'updates the comment counter for the post' do
       user = User.create(name: 'Andrea', posts_counter: 0)
       post = Post.create(title: 'Test', author: user)
-      comment = Comment.new(user: user, post: post)
+      comment = Comment.new(user:, post:)
       expect { comment.save }.to change { post.reload.comments_counter }.by(1)
     end
   end

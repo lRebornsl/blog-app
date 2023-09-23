@@ -4,7 +4,7 @@ RSpec.describe Like, type: :model do
   let(:user) { User.create(name: 'User Name', posts_counter: 0) }
   let(:post) { Post.create(title: 'Post Title', author: user) }
 
-  subject { described_class.new(user: user, post: post, likes_counter: 0) }
+  subject { described_class.new(user:, post:, likes_counter: 0) }
 
   it 'is valid with valid attributes' do
     expect(subject).to be_valid
