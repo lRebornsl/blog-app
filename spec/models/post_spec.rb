@@ -30,8 +30,6 @@ RSpec.describe Post, type: :model do
       comment1 = Comment.create(user: user, post: post, text: 'Comment 1')
       comment2 = Comment.create(user: user, post: post, text: 'Comment 2')
       comment3 = Comment.create(user: user, post: post, text: 'Comment 3')
-
-      # Ensure the comments are in descending order of creation (most recent first)
       expect(post.recent_comments).to eq([comment3, comment2, comment1])
     end
 
