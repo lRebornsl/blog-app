@@ -50,6 +50,7 @@
 - **Create posts**
 - **Comment on posts**
 - **Like posts**
+- **Tested with RSpec**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
