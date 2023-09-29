@@ -15,7 +15,6 @@ RSpec.describe 'Users', type: :request do
     it 'includes correct placeholder text in the response body' do
       get users_path
       expect(response.body).to include('All users')
-      # Replace 'Placeholder text for users#index' with the actual placeholder text.
     end
   end
 
@@ -35,7 +34,6 @@ RSpec.describe 'Users', type: :request do
     it 'includes correct placeholder text in the response body' do
       get user_path(user)
       expect(response.body).to include('User details')
-      # Replace 'Placeholder text for users#show' with the actual placeholder text.
     end
   end
 end
