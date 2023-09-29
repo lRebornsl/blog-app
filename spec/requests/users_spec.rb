@@ -19,7 +19,7 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'GET #show' do
-    let(:user) { { id: 2 } }
+    let(:user) { User.create(name: 'Andrea', posts_counter: 0) }
 
     it 'returns a successful response' do
       get user_path(user)
