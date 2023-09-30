@@ -1,1 +1,38 @@
-<h1> User details </h1>
+<div class="container">
+  <div class="flex user_item">
+    <div class="item_photo border">
+      <img src="<%= @user.photo %>" alt="Photo">
+    </div>
+    <div class="flex item_info border">
+      <h2><%= @user.name %></h2>
+      <p>Number of posts: <%= @user.posts_counter %></p>
+    </div>
+  </div>
+  <div class="user_bio border">
+    <p><%= @user.bio %></p>
+  </div>
+  <div>
+    <% recent_posts = @user.recent_posts %>
+    <ul class="user_posts">
+      <% if recent_posts.any? %>
+        <% recent_posts.each do |post| %>
+          <li class="border post_p">
+            <p>Post #<%= post.id %></p>
+            <p><%= post.title %></p>
+            <p><%= post.text %></p>
+            <div class="flex justify-end">
+              <p>Comments: <%= post.comments.count %>,</p>
+              <p>Likes: <%= post.likes.count %></p>
+            </div>
+          </li>
+        <% end %>
+      <% else %>
+        <p>No recent posts</p>
+      <% end %>
+    </ul>
+  </div>
+  <div class="flex buttons">
+    <button class="button_edit"><%= link_to "See all users", users_path(@user), class: "button_p" %></button>
+    <button class="button_edit"><%= link_to "See all posts", user_posts_path(@user), class: "button_p" %></button>
+  </div>
+</div>

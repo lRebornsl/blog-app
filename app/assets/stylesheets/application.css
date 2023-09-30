@@ -1,15 +1,89 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* Global */
+*,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* Utilities */
+.container {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.border {
+  border: solid 2px black;
+}
+
+.m-y {
+  margin: 10px 0;
+}
+
+/* User Index */
+.user_index {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.user_item {
+  align-items: center;
+  padding: 10px 0;
+}
+
+.item_photo {
+  width: 20%;
+  margin-right: 5px;
+}
+
+.item_info {
+  min-width: 80%;
+  justify-content: space-between;
+  text-decoration: none;
+  color: black;
+}
+
+/* User Show */
+.user_posts {
+  list-style: none;
+  margin: 0;
+  padding-top: 10px;
+}
+
+.buttons {
+  justify-content: space-evenly;
+  padding: 10px 0;
+  text-decoration: none;
+}
+
+.button_edit {
+  background-color: white;
+  border: solid 1px black;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.button_p {
+  text-decoration: none;
+  color: black;
+}
+
+.post_p {
+  margin-bottom: 10px;
+}
+
+/* Post Show */
+.post_title {
+  justify-content: space-between;
+}

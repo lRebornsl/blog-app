@@ -1,1 +1,31 @@
-<h1> Post details </h1>
+<div class="container">
+  <div class="border m-y">
+    <div class="flex post_title">
+      <div>
+        <p>Post #<%= @post.id %> by <%= @user.name %></p>
+      </div>
+      <div class="flex">
+        <p>Comments: <%= @post.comments.count %>,</p>
+        <p>Likes: <%= @post.likes.count %></p>
+      </div>
+    </div>
+    <p><%= @post.title %></p>
+    <p class="user-name"><%= @post.text %>  </p>
+  </div>
+  <div class="border post_p">
+    <div>
+      <ul class="user_index">
+        <% if @post.comments.empty? %>
+          <li>No comments yet.</li>
+        <% else %>
+          <% @post.recent_comments.each do |comment| %>
+            <li>
+              <strong><%= comment.user.name %>:</strong> <%= comment.text %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <button class="button_edit"><%= link_to "Back to all users", users_path(@user), class: "button_p" %></button>
+</div>
