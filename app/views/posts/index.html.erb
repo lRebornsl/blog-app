@@ -1,1 +1,43 @@
-<h1> All Posts </h1>
+<div class="container">
+  <div class="flex user_item">
+    <div class="item_photo border">
+      <img src="<%= @user.photo %>" alt="Photo">
+    </div>
+    <div class="flex item_info border">
+      <h2><%= @user.name %></h2>
+      <p>Number of posts: <%= @user.posts_counter %></p>
+    </div>
+  </div>
+  <div class="row">
+    <% if @posts.empty? %>
+      <div>
+        <p>There are no posts available for this user.</p>
+      </div>
+    <% else %>
+      <% @posts.each do |post| %>
+        <div class="border">
+          <p><%= link_to "Post #{post.id}", user_post_path(user_id: @user.id, id: post.id), title: "To Post Details", class:"button_p"%></p>
+          <p><%= post.title %></p>
+          <p><%= post.text %></p>
+          <div class="flex justify-end">
+            <p>Comments: <%= post.comments.count %>,</p>
+            <p>Likes: <%= post.likes.count %></p>
+          </div>
+        </div>
+        <div class="border post_p">
+          <h4>Comments:</h4>
+          <% if post.comments.empty? %>
+            <p>This post has no comments.</p>
+          <% else %>
+            <% post.comments.each do |comment| %>
+              <p><%= comment.user.name %>: <%= comment.text %></p>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="flex buttons">
+    <button class="button_edit"><%= link_to "Back to User Details", user_path(@user), class: "button_p" %></button>
+  </div>
+</div>

@@ -2,6 +2,7 @@
 *, body {
   margin: 0;
   padding: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
 }
 
 /* Utilities */
@@ -20,6 +21,14 @@
   justify-content: end;
 }
 
+.border {
+  border: solid 2px black;
+}
+
+.m-y {
+  margin: 10px 0;
+}
+
 /* User Index */
 .user_index {
   list-style: none;
@@ -34,6 +43,7 @@
 
 .item_photo {
   width: 20%;
+  margin-right: 5px;
 }
 
 .item_info {
@@ -66,4 +76,13 @@
 .button_p {
   text-decoration: none;
   color: black;
+}
+
+.post_p {
+  margin-bottom: 10px;
+}
+
+/* Post Show */
+.post_title {
+  justify-content: space-between;
 }
