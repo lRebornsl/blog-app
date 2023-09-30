@@ -8,8 +8,8 @@ class PostsController < ApplicationController
     @user = User.find_by(id: params[:user_id])
     @post = Post.find_by(id: params[:id])
 
-    if @post.nil?
-      redirect_to posts_path
-    end
+    return unless @post.nil?
+
+    redirect_to posts_path
   end
 end
