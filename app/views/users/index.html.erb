@@ -1,1 +1,15 @@
-<h1> All users </h1>
+<div>
+  <ul class="user_index">
+    <% @users.each do |user| %>
+      <li class="flex user_item">
+        <div class="item_photo">
+          <img src="<%= user.photo %>" alt="Photo">
+        </div>
+        <div class="flex item_info">
+          <p><%= link_to user.name, user_path(user), title:"To user details", class: "item_info" %> </p>
+          <p><%= user.posts_counter %></p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
