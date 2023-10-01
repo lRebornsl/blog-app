@@ -1,0 +1,15 @@
+<div class="container">
+  <div>
+    <div>
+    <%= form_with(model: [@user, @post, @comment], url: user_post_comments_path(@user, @post), method: :post) do |form| %>
+      <div>
+        <%= form.text_area :text %>
+      </div>
+
+      <div>
+        <%= form.submit 'Add Comment', class: 'button_edit' %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
