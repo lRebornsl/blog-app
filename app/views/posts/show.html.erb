@@ -12,6 +12,14 @@
     <p><%= @post.title %></p>
     <p class="user-name"><%= @post.text %>  </p>
   </div>
+  <div class="flex post_p">
+    <div>
+      <%= render 'likes/form' %>  
+    </div>
+    <div>
+      <%= render 'comments/form' %>
+    </div>
+  </div>
   <div class="border post_p">
     <div>
       <ul class="user_index">
