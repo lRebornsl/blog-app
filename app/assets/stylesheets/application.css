@@ -1,4 +1,14 @@
 /* Global */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 *,
 body {
   margin: 0;
@@ -28,6 +38,14 @@ body {
 
 .m-y {
   margin: 10px 0;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.pt-100 {
+  padding-top: 100px;
 }
 
 /* User Index */
